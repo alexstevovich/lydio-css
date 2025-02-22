@@ -1,0 +1,30 @@
+{
+  "name": "@lydio/css",
+  "version": "1.0.0",
+  "description": "A structured CSS generator for JavaScript, designed to provide a fluent and efficient way to create styles programmatically with a clean and expressive API.",
+  "main": "./src/index.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "node test/lydio-css.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexstevovich/lydio-css.git"
+  },
+  "author": "Alex Stevovich",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "stylesheet",
+    "generator",
+    "css-in-js",
+    "fluent",
+    "css-rules",
+    "frontend",
+    "dynamic-css",
+    "lydio",
+    "css-generator",
+    "web-design",
+    "ui-library"
+  ]
+}
