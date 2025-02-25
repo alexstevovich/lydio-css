@@ -6,7 +6,7 @@ Lydio: CSS is a structured CSS generator for JavaScript, designed to provide a f
 - Fluent API for defining CSS stylesheets.
 - Supports global and component-scoped styles.
 - Short-hand methods for efficiency: `.rule()`, `.select()`, `.prop()`.
-- Explicit methods (`addRule()`, `addAndGetRule()`) available for clarity when needed.
+- Methods return appropriate values for fluent chaining (`this`) or element retrieval (`append`).
 
 ## Installation
 ```sh
@@ -36,13 +36,17 @@ body {
 
 ## API
 ### Creating Rules
-- `.rule()`: Starts a new CSS rule (`addAndGetRule()`).
+- `.rule()`: Starts a new CSS rule.
 
 ### Selecting Elements
 - `.select(selector)`: Adds a selector for the rule.
 
 ### Adding Properties
-- `.prop(property, value)`: Sets a CSS property (`addProperty(property, value)`).
+- `.prop(property, value)`: Sets a CSS property.
+
+### Adding and Retrieving Rules
+- `.add(rule)`: Adds a rule and returns `this` for chaining.
+- `.append(rule)`: Adds a rule and returns the appended rule.
 
 ## Example Usage
 ```js
@@ -69,3 +73,10 @@ html, body {
 }
 */
 ```
+
+## License
+MIT
+
+## Branding & Authenticity
+**Lydio is a project by Alex Stevovich.** The Lydio name, branding, and identity belong to its creator.
+

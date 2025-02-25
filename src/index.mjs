@@ -10,20 +10,13 @@ export class Property {
         return this;
     }
 
-    important() {
-        this.modifiers.push('!important');
-        return this;
-    }
-
-    addModifier(modifier) {
-        this.modifiers.push(modifier);
-        return this;
-    }
 
     toCss() {
         return `${this.name}: ${this.value}${this.modifiers.length ? ' ' + this.modifiers.join(' ') : ''};`.trim();
     }
     
+
+    //can remove modifiers in time if not needed 
 
     /** ✅ Creates a deep copy of this Property */
     clone() {
@@ -40,32 +33,15 @@ export class Rule {
         this.nestedRules = [];
     }
 
-    addSelector(selector) {
+    select(selector) {
         this.selectors.push(selector);
         return this;
     }
 
-    select(selector) {
-        return this.addSelector(selector);
-    }
-
-    createProperty(name) {
-        return new Property(name);
-    }
-
-    addAndGetProperty(name, value) {
+    prop(name, value) {
         const property = new Property(name, value);
         this.properties.push(property);
-        return property;
-    }
-
-    addProperty(name, value) {
-        this.addAndGetProperty(name, value);
         return this;
-    }
-
-    prop(name, value) {
-        return this.addProperty(name, value);
     }
 
     nest(selector) {
@@ -121,7 +97,7 @@ export class RuleCollection {
         return this;
     }
 
-    addAndGet(rule) {
+    append(rule) {
         this.add(rule)
         return rule
     }
